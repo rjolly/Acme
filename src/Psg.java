@@ -463,10 +463,10 @@ public class Psg
 	int llx, lly, urx, ury;
 	llx = ury = Integer.MAX_VALUE;
 	urx = lly = Integer.MIN_VALUE;
-	Enumeration enum = path.elements();
-	while ( enum.hasMoreElements() )
+	Enumeration anum = path.elements();
+	while ( anum.hasMoreElements() )
 	    {
-	    PsgPathItem pi = (PsgPathItem) enum.nextElement();
+	    PsgPathItem pi = (PsgPathItem) anum.nextElement();
 	    llx = Math.min( llx, pi.p.x );
 	    lly = Math.max( lly, pi.p.y );
 	    urx = Math.max( urx, pi.p.x );
@@ -493,10 +493,10 @@ public class Psg
 	int x, y;
 	Polygon poly = null;
 	graphics.setColor( current.color );
-	Enumeration enum = path.elements();
-	while ( enum.hasMoreElements() )
+	Enumeration anum = path.elements();
+	while ( anum.hasMoreElements() )
 	    {
-	    PsgPathItem pi = (PsgPathItem) enum.nextElement();
+	    PsgPathItem pi = (PsgPathItem) anum.nextElement();
 	    if ( ! pi.draw )
 		{
 		if ( poly != null )
@@ -517,10 +517,10 @@ public class Psg
 	{
 	int x = 0, y = 0;	// initial values don't ever get used
 	graphics.setColor( current.color );
-	Enumeration enum = path.elements();
-	while ( enum.hasMoreElements() )
+	Enumeration anum = path.elements();
+	while ( anum.hasMoreElements() )
 	    {
-	    PsgPathItem pi = (PsgPathItem) enum.nextElement();
+	    PsgPathItem pi = (PsgPathItem) anum.nextElement();
 	    if ( pi.draw )
 		if ( pi.linewidth < 1 )
 		    graphics.drawLine( x, y, pi.p.x, pi.p.y );

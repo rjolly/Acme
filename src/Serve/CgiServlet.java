@@ -119,9 +119,9 @@ public class CgiServlet extends HttpServlet
 	argVec.addElement( filename );
 	if ( queryString != null && queryString.indexOf( "=" ) == -1 )
 	    {
-	    Enumeration enum = new StringTokenizer( queryString, "+" );
-	    while ( enum.hasMoreElements() )
-		argVec.addElement( (String) enum.nextElement() );
+	    Enumeration anum = new StringTokenizer( queryString, "+" );
+	    while ( anum.hasMoreElements() )
+		argVec.addElement( (String) anum.nextElement() );
 	    }
 	String argList[] = makeList( argVec );
 
@@ -157,10 +157,10 @@ public class CgiServlet extends HttpServlet
 	    envVec.addElement( makeEnv( "REMOTE_USER", req.getRemoteUser() ) );
 	if ( req.getAuthType() != null )
 	    envVec.addElement( makeEnv( "AUTH_TYPE", req.getAuthType() ) );
-	Enumeration enum = req.getHeaderNames();
-	while ( enum.hasMoreElements() )
+	Enumeration anum = req.getHeaderNames();
+	while ( anum.hasMoreElements() )
 	    {
-	    String name = (String) enum.nextElement();
+	    String name = (String) anum.nextElement();
 	    String value = req.getHeader( name );
 	    if ( value == null )
 		value = "";
