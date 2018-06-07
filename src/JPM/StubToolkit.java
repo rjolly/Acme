@@ -27,7 +27,12 @@ import java.util.*;
 import java.awt.*;
 import java.awt.peer.*;
 import java.awt.image.*;
+import java.awt.font.*;
+import java.awt.im.*;
+import java.awt.dnd.*;
+import java.awt.dnd.peer.*;
 import java.net.*;
+import java.text.*;
 import sun.awt.image.FileImageSource;
 import sun.awt.image.OffScreenImageSource;
 import sun.awt.image.ImageRepresentation;
@@ -326,11 +331,39 @@ public class StubToolkit extends Toolkit
 	{
 	throw new InternalError( "not implemented" );
 	}
+    public Map<TextAttribute,?> mapInputMethodHighlight(InputMethodHighlight highlight)
+	{
+	throw new InternalError( "not implemented" );
+	}
+    public boolean isModalExclusionTypeSupported(Dialog.ModalExclusionType modalExclusionType)
+	{
+	throw new InternalError( "not implemented" );
+	}
+    public boolean isModalityTypeSupported(Dialog.ModalityType modalityType)
+	{
+	throw new InternalError( "not implemented" );
+	}
+    public DragSourceContextPeer createDragSourceContextPeer(DragGestureEvent dge)
+	{
+	throw new InternalError( "not implemented" );
+	}
+    public Image createImage(URL url)
+	{
+	throw new InternalError( "not implemented" );
+	}
+    public Image createImage(String filename)
+	{
+	throw new InternalError( "not implemented" );
+	}
+    protected DesktopPeer createDesktopPeer(Desktop target)
+	{
+	throw new InternalError( "not implemented" );
+	}
 
     }
 
 
-class StubImage extends sun.awt.image.Image
+class StubImage extends sun.awt.image.ToolkitImage
     {
 
     /*
@@ -352,7 +385,7 @@ class StubImage extends sun.awt.image.Image
 	return new StubGraphics( this );
 	}
 
-    protected sun.awt.image.ImageRepresentation getImageRep()
+    public sun.awt.image.ImageRepresentation getImageRep()
 	{
 	return super.getImageRep();
 	}
@@ -547,6 +580,10 @@ class StubGraphics extends Graphics {
 	throw new InternalError( "not implemented" );
 	}
     public void drawPolyline( int[] xPoints, int[] yPoints, int nPoints )
+	{
+	throw new InternalError( "not implemented" );
+	}
+    public void drawString(AttributedCharacterIterator iterator, int x, int y)
 	{
 	throw new InternalError( "not implemented" );
 	}
